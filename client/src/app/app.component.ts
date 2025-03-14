@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { TrafficChartComponent } from './components/traffic-chart/traffic-chart.component';
+import { TrafficTableComponent } from './components/traffic-table/traffic-table.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [HeaderComponent, TrafficChartComponent, TrafficTableComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
