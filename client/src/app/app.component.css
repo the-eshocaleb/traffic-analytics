@@ -1,0 +1,17 @@
+.table-chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 1200px) {
+    .table-chart-container {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
