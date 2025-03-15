@@ -23,24 +23,16 @@ export class TrafficTableComponent implements OnInit {
 
   ngOnInit(): void {
     // set the traffic data from the service to the signal once the component is loaded
-    // this.trafficService.getTrafficData()
-    //   .pipe(
-    //     catchError((error) => {
-    //       console.error('Error fetching traffic data', error);
-    //       throw error;
-    //     })
-    //   ).subscribe((data) => {
-    //     this.trafficData.set(data);
-    //   });
+    this.trafficService.getTrafficData()
+      .pipe(
+        catchError((error) => {
+          console.error('Error fetching traffic data', error);
+          throw error;
+        })
+      ).subscribe((data) => {
+        this.trafficData.set(data);
+      });
 
-    // set the traffic data to a static array for now
-    this.trafficData.set([
-      { page_id: 1, page_url: '/home', traffic: 125 },
-      { page_id: 2, page_url: '/about', traffic: 80 },
-      { page_id: 3, page_url: '/contact', traffic: 300 },
-      { page_id: 4, page_url: '/product', traffic: 45 },
-      { page_id: 5, page_url: '/blog', traffic: 95 },
-    ]);
   }
 
 }
