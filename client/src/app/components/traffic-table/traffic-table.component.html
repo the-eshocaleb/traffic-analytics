@@ -1,23 +1,27 @@
-<form >
-    <label>Filter pages by traffic count</label>
-    <input  name="filter" [(ngModel)]="threshold" placeholder="Enter a threshold" type="number">
-</form>
+<div class="table-container">
 
-<h3>Traffic Table</h3>
-<table>
-    <thead>
-        <th>Page Url</th>
-        <th>Page Traffic</th>
-    </thead>
-    <tbody>
-        <!-- loop through the trafficData array, filter and display required data, track the unique id -->
-        @for (page of trafficData() | filterTraffic : threshold() ; track page.page_id ) {
-                <tr>
-                    <td>{{page.page_url}}</td>
-                    <td>{{page.traffic}}</td>
-                </tr>
+    <h3>Traffic Table</h3>
+
+    <form >
+        <label>Filter pages by traffic count</label>
+        <input  name="filter" [(ngModel)]="threshold" placeholder="Enter a threshold" type="number">
+    </form>
+    
+    <table>
+        <thead>
+            <th>Page Url</th>
+            <th>Page Traffic</th>
+        </thead>
+        <tbody>
+            <!-- loop through the trafficData array, filter and display required data, track the unique id -->
+            @for (page of trafficData() | filterTraffic : threshold() ; track page.page_id ) {
+                    <tr>
+                        <td>{{page.page_url}}</td>
+                        <td>{{page.traffic}}</td>
+                    </tr>
+                
+            }
             
-        }
-        
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
